@@ -1,0 +1,837 @@
+*{
+    box-sizing: border-box;    
+    /* все елементы текста, их ширина будет расчитываться внутри, паддинги и бордер не будут на них оказывать влияния */
+}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+body{
+    max-width: 1380;
+    font-weight: 400;
+    /* шрифт (bold. italic) */
+    font-size: 14px;
+    /* размер шрифта */
+    line-height: 18px;
+    /* высота строки */
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden; 
+}
+.container{
+    max-width: 1280;
+    /* указываем максимальную ширину, чтобы на маленьких екранах не появился нижний скрол
+    Боже упаси это допустить!! */
+    /* margin: 0 auto; */
+    margin: 0px 100px 0px 100px;
+    /* max-width: 1920px; */
+}
+.container__1{
+    margin: 0px 190px 0px 190px;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul,
+li{
+    /* вообще у лишек не надо выключать маркеры, но в данном примере отключаем */
+    list-style: none;
+    /* отключает маркеры */
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-image: url(../img/header-background-top.jpg);
+    background-size: cover;
+    /* чтобы картинка растягивалась */
+    background-position: top;
+    min-height: 1370px;
+    max-height: 1370px;
+    margin: 0 auto;
+
+    background-attachment: fixed;
+    /* Фон фиксируется относительно области просмотра. Даже если 
+    элемент имеет механизм прокрутки, фон не перемещается вместе с элементом.  */
+    font-family: 'DM Sans', sans-serif;
+}
+.header__top{
+    display: flex;
+    /* все дочерние элементы становятся flex элементами, выстроенными в ряд
+    все они по вертикали примут размер самого высокого элемента, 
+    который станет определяющим вертикального размера.
+    если у flex контейнера задана высота, то все элементы растянутся до высоты контейнера, 
+    независимо от размера содержимого */
+    justify-content: space-between;
+    /* разделяет классы на 2 части. 1 часть оставляет слева, другую справа */
+    align-items: center;
+    /* центрирование по вертикали */
+    min-height: 100px;
+    max-height: 100px;
+}
+li {
+    list-style-type: none;
+    /* Убираем маркеры (жирные точки около текста)*/
+  }
+.header__top li{
+    display: inline-block; 
+    /* Это значение генерирует блочный элемент, который обтекается 
+    другими элементами веб-страницы подобно встроенному элементу.  */
+    justify-content: space-between;
+    margin-top: 60px;
+}
+.header__top .header__main{
+    color: rgb(247, 247, 247);
+    line-height: 24px;
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    position: fixed;
+    transition: 0.40s;
+}
+.resume__download{
+    color: rgb(247, 247, 247);
+    outline: none;
+    line-height: 24px;
+    /* высота строки */
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #fff;
+    float: right;
+    background-color: transparent;
+    padding: 7px 80px 7px 80px;
+    transition: 0.40s;
+    /* position: relative; */
+    /* transition: all .5s; */
+} 
+/* .header__top .resume__download{
+    margin-top: 25px;
+} */
+.header__mb{
+    padding-top: 200px;
+
+}
+.header__middle{
+    color: rgb(255, 255, 255);
+    display: inline;
+    /* Элемент отображается как встроенный. Использование блочных тегов,
+    таких как <div> и <p>, автоматически создает перенос и показывает 
+    содержимое этих тегов с новой строки. Значение inline отменяет эту особенность, 
+    поэтому содержимое блочных элементов начинается с того места, где окончился предыдущий элемент. */
+    text-align: center;
+    min-height: 500px;
+    min-height: 500px;
+}
+.header__name{
+    color: #fff;
+    line-height: 100px;
+    font-size: 90px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.header__who-i-am{
+    color: rgb(179, 179, 179);
+    line-height: 50px;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    padding: 8px;
+}
+.header__photo{
+    padding-top: 60px;
+}
+.header__my-photo{
+    display: block;
+    margin: 0 auto;
+    border: 2px solid rgb(237,239,245);
+    border-radius: 50%; /* Превращаем в круг */
+    border-width: 8px;
+    box-shadow: none;
+    background-color:  rgb(237,239,245);
+    cursor: default;
+}
+.header__bottom{
+    background-color:  rgb(237,239,245);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* чтобы картинка растягивалась */
+    background-position: center;
+    min-height: 700px;
+    max-height: 700px;
+    margin-top: -135px;
+}
+.slick-list {
+    overflow: hidden;
+}
+.slick-track{
+    display: flex;
+    align-items: flex-start;
+}
+.slick-slide:focus {
+    outline: none;
+}
+.header__slider-inner{
+    padding-top: 220px;
+    text-align: center;
+    position: relative;
+    font-family: 'icomoon';
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    max-height: 680px;
+}
+.slick-dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 45px;
+    padding-right: 35px;
+}
+.slick-dots li{
+    /* list-style-type: none;
+    list-style: none; */
+    margin: 0px 7px;
+}
+.slick-dots li button{
+    font-size: 0;
+    width: 7px;
+    height: 7px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50% ;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    border: none;
+}
+.slick-dots li.slick-active button{
+    background-color: transparent;
+    border: 1px solid rgb(0, 0, 0);
+    width: 8.5px;
+    height: 8.5px;
+    cursor: pointer;
+}
+.slick-btn{
+    position: absolute;
+    top: 50%;
+    margin-top: 100px;
+    font-size: 70px;
+    display: inline-block;
+    line-height: 20px;
+    background-color: transparent;
+    font-weight: 500;
+    padding: 5px 20px 5px 20px;
+    outline: none;
+    color: rgb(20, 19, 19);
+    border: none;
+    color: rgb(190, 190, 190);
+    cursor: pointer;
+}
+.slick-btn.slick-disabled{
+    cursor: default;
+    background-color: transparent;
+}
+.slick-btn::before{
+    position: absolute;
+    top: 50% l 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'icomoon';
+    color: rgb(20, 19, 19);
+}
+.slick-btn.slick-prev{
+    left: 0;
+}
+.slick-next{
+    right: 0;
+}
+.slick-prev:before{
+    content: "\e908";
+    z-index: 1;
+}
+.slick-next:before{
+    content: "\e907";
+}
+.header__slider-item{
+    display: block;
+    transition-duration: 1000ms;
+    /* overflow: hidden; */
+}
+.header__slider-item-inner{
+    display: flex;
+    justify-content: space-between;
+    /* transform: translate3d(x, y, z); */
+    /* Таким образом виден будет только один слайд, а остальные скрыты. */
+    position: relative;
+    max-height: 650px;
+}
+.header__slider-title,
+.skills__title,
+.contact__info-title-left,
+.contact__info-title-right{
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin-top: 20px;
+    color: black;
+    position: relative;
+    float: left;
+}
+.header__slider-title::before,
+.skills__title::before,
+.contact__info-title-left::before,
+.contact__info-title-right::before{
+    content: "";
+    position: absolute;
+    /* без него линии этой не будет 
+    свойство content позволяет вставлять генерируемое содержание в текст веб-страницы, 
+    которое первоначально в тексте отсутствует. Применяется совместно с псевдоэлементами :after и :before, 
+    они соответственно указывают отображать новое содержимое после или до элемента, к которому добавляются.*/
+    /* position: absolute; */
+    width: 58px;
+    height: 7px;
+    background-color: #f32400;
+    left: 0;
+    top: 57px;
+}
+.header__slider-item-inner a:hover{
+    background: rgb(252, 252, 252);
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s;
+}
+.header__top a.resume__download:hover{
+    background: rgb(252, 252, 252);
+    /* transition: cubic-bezier(0.215, 0.610, 0.355, 1) .5s; */
+    color:rgb(134, 134, 134);
+}
+.header__top a.header__main:hover{
+    color:rgb(134, 134, 134);
+}
+.header__slider-link-hobby-logo a:hover{
+    transition: all .40s;
+    background-color: rgb(56, 56, 56);
+    color: silver;
+}
+.header__slider-text-about-left{
+    margin-top: 160px;
+    text-align: left;
+    font-size: 17.5px;
+    line-height: 1.4em;
+    font-weight: 400;
+    color: rgb(7,10,14);
+    letter-spacing: normal;
+    font-family: 'DM Sans', sans-serif;
+    max-width: 90%;
+}
+.header__slider-text-about-right{
+    margin-top: 120px;
+    right: 0;
+    text-align: left;
+    font-size: 17.5px;
+    line-height: 1.4em;
+    font-weight: 400;
+    color: rgb(7,10,14);
+    letter-spacing: normal;
+    font-family: 'DM Sans', sans-serif;
+    max-width: 90%;
+}
+.header__slider-item-box1{
+    font-family: 'icomoon';
+    margin-top: 40px;
+    justify-content: space-between;  
+    /* display: inline; */
+    position: relative;
+    min-width: 50%;
+    max-width: 50%;
+}
+.header__slider-link,
+.footer__links{
+    text-align: left;
+    position: absolute;
+    z-index: 1;
+}
+.telegram,
+.instagram,
+.facebook,
+.twitter{
+    justify-content: space-between;
+    position: relative;
+    font-size: 33px; 
+    line-height: 35px;
+    cursor: none;
+}
+.telegram::before,
+.instagram:before,
+.facebook::before,
+.twitter::before{
+    /* background-color: rgb(237,239,245); */
+    background-color: transparent;
+    color: black;
+    position: absolute;
+    text-align: left;
+    cursor: pointer;
+}
+.telegram{
+    margin-right: 45px;
+}
+.instagram{
+    margin-right: 45px;
+}
+.facebook{
+    margin-right: 45px;
+}
+.telegram::before{
+    content: "\ea95";
+}
+.instagram::before{
+    content: "\e905";
+}
+.facebook::before{
+    content: "\e903";
+}
+.twitter::before{
+    content: "\e904";
+}
+.header__slider-education{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 110px;
+    font-family: 'DM Sans', sans-serif;
+    text-align: left;
+    float: initial;
+}
+.header__slider-education-all{
+    /* min-width: 225px; */
+    /* max-width: 430px; */
+    max-width: 275px;
+}
+.header__slider-education-inner{
+    min-height: 70px;
+}
+.header__slider-education-title{
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: 600;
+    color: rgb(7,10,14);
+    position: relative;
+    /* min-height: 85px; */
+}
+.header__slider-education-years{
+    position: absolute;
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: 600;
+    color: rgb(148,163,186);
+}
+.header__slider-education-text{
+    margin-top: 50px;
+    color: rgb(7,10,14);
+    font-size: 15px;
+    line-height: 1.4em;
+}
+.header__slider-item-inner .resume__download{
+    color: rgb(247, 247, 247);
+    line-height: 24px;
+    /* высота строки */
+    font-size: 14px;
+    /* text-decoration: none; */
+    font-weight: 500;
+    width: 275px;
+    cursor: pointer;
+    border: 0.1px solid rgb(7,10,14);
+    float: right;
+    background-color: transparent;
+    padding: 8px 50px 8px 50px;
+    color: rgb(7,10,14);
+    text-align: center;
+    /* position: relative; */
+    /* transition: all .5s; */
+}
+.header__slider-link-hobby-logo{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'icomoon';
+    margin-top: 120px;
+    max-width: 800px;
+    margin-right: 125px;
+}
+.football__logo,
+.finance__logo,
+.music__logo,
+.film__logo,
+.travel__logo{
+    position: absolute;
+    border-radius:50%;
+    background-color: rgb(106, 169, 172);
+    padding: 45px;
+    max-width: 170;
+    margin-right: -15px;
+    outline: 0;
+    border: 0;
+}
+.football__logo::before,
+.finance__logo::before,
+.music__logo::before,
+.film__logo::before,
+.travel__logo::before{
+    text-align: center;
+    font-size: 35px;
+    line-height: 35px;
+    width: 35px;
+    color: rgb(237,239,245); 
+}
+.football__logo::before{
+    content: "\eaa7";
+}
+.finance__logo::before{
+    content: "\e99b";
+}
+.music__logo::before{
+    content: "\e911";
+}
+.film__logo::before{
+    content: "\e914";
+}
+.travel__logo::before{
+    content: "\e9af";
+}
+.header__slider-link-hobby-text{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 135px;
+    color: rgb(7,10,14);
+    font-size: 15px;
+    line-height: 1.4em;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-family: 'icomoon';
+    /* max-width: 800px; */
+}
+.football,
+.finance,
+.music,
+.film,
+.travel{
+    outline: 0;
+    border: 0;
+    color: rgb(7,10,14);
+    font-size: 17px;
+    line-height: 1.4em;
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    min-width: 125px;
+}
+.skills{
+    background-image: url(../img/skills-background.jpg);
+    background-size: cover;
+    /* чтобы картинка растягивалась */
+    background-position: top;
+    min-height: 850px;
+    margin: 0 auto;
+    /* background-attachment: scroll; */
+    font-family: 'DM Sans', sans-serif;
+    display: block;
+}
+.skills__title{
+    margin-top: 70px;
+    color: rgb(237,239,245);
+}
+.skills__title::before{
+    background-color: rgb(237,239,245);;
+}
+.skills__inner{
+    display: block;
+    justify-content: space-between;
+    text-align: left;
+}
+.skills__info{
+    padding-top: 190px;
+}
+
+.skills__items{
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr) !important;
+    /* делает 2 ряда и 3 столбца данных. 3 столбца имеют равные значения относительно родителя */
+    font-family: 'DM Sans', sans-serif;
+    /* width: auto; */
+    min-height: 610px;
+    width: 100% !important;
+    height: 100%;
+    left: 0;
+    float: left;
+} 
+.fix .skills__items > * {
+    min-width: 0;
+  }
+.skills__item-title-1,
+.skills__item-title-2,
+.skills__item-title-3,
+.skills__item-title-4,
+.skills__item-title-5,
+.skills__item-title-6{
+    text-align: center;
+    padding-top: 130px;
+    font-size: 17px;
+    font-weight: 600;
+    /* height: auto;
+    width: auto; */
+}
+.skills__item-title-1:hover,
+.skills__item-title-3:hover,
+.skills__item-title-5:hover{
+    /* background-color: rgb(110, 163, 224); */
+    background-color: rgb(46,73,117);
+}
+.skills__item-title-2:hover,
+.skills__item-title-4:hover,
+.skills__item-title-6:hover{
+    /* background-color: rgb(221, 210, 210);*/
+    /* background-color: rgb(150, 193, 241); */
+    /* background-color: rgb(228, 223, 177); */
+    /* background-color: rgb(228, 223, 177); */
+    background-color: rgb(187,200,221);
+} 
+.skills__item-text-1,
+.skills__item-text-2,
+.skills__item-text-3,
+.skills__item-text-4,
+.skills__item-text-5,
+.skills__item-text-6{
+    font-size: 15px;
+    font-weight: 400;
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 10px;
+    letter-spacing: 0.5px;
+}
+.skills__item-title-1,
+.skills__item-title-3,
+.skills__item-title-5{
+    /* background-color:  rgb(237,239,245); */
+    background-color: rgb(84, 134, 187);
+    /* background-color: rgb(46,73,117); */
+    color: black;
+}
+.skills__item-title-2,
+.skills__item-title-4,
+.skills__item-title-6{
+    /* background-color: rgb(176, 193, 212); */
+    /* background-color:  rgb(237,239,245); */
+    /* background-color:  rgb(220, 222, 224); */
+    background-color: rgb(255, 255, 255);
+}
+.skills__item-text-1,
+.skills__item-text-3,
+.skills__item-text-5{
+    /* color: #ffffffe1; */
+    color: azure;
+}
+.skills__item-text-2,
+.skills__item-text-4,
+.skills__item-text-6{
+    color: #192670e1;
+}
+.contact{
+    background: linear-gradient(to right, rgb(46,73,117) 50%, rgb(187,200,221) 50%);
+    /* делает бекграунд с 2 цветов поровну */
+    min-height: 550px;
+}
+.contact__inner{
+    display: flex;
+    padding-top: 70px;
+}
+.contact__info{
+    min-width: 50%;
+    color: white;
+    position: relative;
+}
+.contact__info-title-left{
+    width: 100%;
+    color: white;
+}
+.contact__info-text-inner{
+    position: absolute;
+    padding-top: 130px;
+    display: flex;
+}
+.contact__info-text{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 2em;
+}
+.contact__info-contacts{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    line-height: 2em;
+    padding-left: 45px;
+}
+.contact__write-me{
+    min-width: 50%;
+    padding-left: 40px;
+} 
+textarea,
+input{
+    padding: 0 20px;
+    font-family: 'DM Sans', sans-serif;
+    color: rgb(44, 46, 48);
+}
+.header__info-input-inner{
+    padding-top: 135px;
+    position: relative;
+    display: block;
+}
+.contact__info-name-and-email{
+    display: flex;
+    justify-content: space-between;
+}
+.contact__info-input-name,
+.contact__info-input-mail,
+.contact__info-input-tel,
+.contact__info-input-massage{
+    font-family: 'DM Sans', sans-serif;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    line-height: 2em;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+.contact__info-input-name:hover,
+.contact__info-input-tel:hover,
+.contact__info-input-massage:hover{
+    border-bottom: 2px solid rgb(4, 10, 27);
+}
+.contact__info-input-name{
+    position: relative;
+    border-bottom: 1px solid rgb(4, 10, 27);
+    padding-right: 10px;
+}
+.contact__info-input-mail{
+    position: relative;
+    border-bottom: 2px solid rgb(255, 7, 7);
+    padding-right: 10px;
+}
+.contact__info-input-tel{
+    margin-top: 15px;
+    border-bottom: 1px solid rgb(4, 10, 27);
+    width: 100%;
+    resize: none;
+}
+input.contact__info-input-tel{
+    background-color: transparent;
+}
+.contact__info-input-massage{
+    margin-top: 5px;
+    border-bottom: 1px solid rgb(4, 10, 27);
+    width: 100%;
+    padding-bottom: 50px;
+    resize: none;
+}
+.send__contact-to-user{
+    font-size: 20px;
+    line-height: 1.4em;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    color: rgb(223,49,67);
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border: 5px solid rgb(223,49,67);
+    padding: 1px 11px 1px 11px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.send__contact-to-user:hover{
+    border: 5px solid rgb(234,143,152);
+    color: rgb(234,143,152);
+    transition: .5s;
+}
+.footer{
+    min-height: 210px;
+    background-color: rgb(237,239,245);
+}
+.footer__inner{
+    display: flex;
+    justify-content: space-between;
+}
+.footer__left{
+    min-width: 50%;
+    max-width: 50%;
+    position: relative;
+    padding-top: 65px;
+}
+.footer__resume-download{
+    color: rgb(7,10,14);
+    outline: none;
+    line-height: 24px;
+    /* высота строки */
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid rgb(7,10,14);
+    float: right;
+    background-color: transparent;
+    padding: 12px 80px 12px 80px;
+    width: 100%;
+    right: 0;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    /* position: relative; */
+    /* transition: all .5s; */
+}
+.footer__resume-download:hover{
+    background-color: white;
+    transition: .5s;
+}
+.footer__copy{
+    margin-top: 75px;
+    font-family: 'open sans',sans-serif;
+    line-height: 1.4em;
+    font-size: 13px;
+    color: rgb(7,10,14);
+}
+.footer__right{
+    padding-top: 35px;
+    width: 100%;
+    align-items: center;
+    right: 0;
+    left: 0;
+    position: relative;
+}
+.footer__right-box{
+    font-family: 'icomoon';
+    margin-top: 40px;
+    justify-content: space-between;  
+    /* display: inline; */
+    position: relative;
+}
+.footer__links{
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.footer__subscribe{
+    padding-top: 65px;
+    font-family: 'open sans',sans-serif;
+    line-height: 1.4em;
+    font-size: 13px;
+    color: rgb(7,10,14);
+    padding-left: 125px;
+    text-align: center;
+    position: relative;
+}

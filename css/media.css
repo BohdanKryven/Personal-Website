@@ -1,0 +1,63 @@
+@media (max-width: 820px){
+    .header__slider-link-hobby-text{
+        margin-right: 125px;
+    }
+}
+@media (max-width: 910px){
+    .slick-dots li button{
+        display: none;
+    }
+}
+@media (max-width: 980px){
+    .header__slider-education-inner{
+        min-height: 110px !important;
+    }
+}
+@media (max-width: 1040px){
+    body{
+        overflow-x: hidden;
+        /* Свойство overflow-x управляет отображением содержания блочного элемента 
+        по горизонтали, если контент целиком не помещается и выходит за область справа или слева от блока. */
+    }
+    .contact__info-title-right::before{
+        margin-top: 37px;
+    }
+    .header__info-input-inner{
+        margin-top: 37px;
+    }
+    .contact__inner{
+        padding-top: 30px !important;
+    }
+    .slick-btn{
+        top: 37% !important;
+    }
+    .contact__info-name-and-email{
+        display: flex;
+        justify-content: space-between !important;
+        position: relative;
+        /* max-width: 360px !important; */
+    }
+    .contact__info-input-name[type=text]{
+        width: 95%;
+        float: left;
+    }
+    .contact__info-input-mail[type=text]{
+        width: 95%;
+        float: right;
+    }
+    .contact__info-input-tel[type=text]{
+        width: 100%;
+    }
+    input[type=text]{
+        width: 100%;
+     }
+}
+
+@media (max-width: 1015px){
+    .resume__download{
+        margin-right: 1px;
+    }
+    .footer__resume-download{
+        margin-left: 1px;
+    }
+}
